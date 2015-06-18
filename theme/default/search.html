@@ -1,0 +1,53 @@
+ {%include file="layout/head.html"%}
+
+  <div id="box">
+  {%if $book_list eq ''%}
+  <center> <font color=red>很抱歉，面板暂无留言!</font> </center>
+  {%else%}
+    {%section name=book loop=$book_list%}
+    <div class="box_list">
+      <p><img src="{%$img%}online.gif" alt="留言者" /> <strong>{%$book_list[book].nickname%}</strong></p>
+      <div class="list_time">
+        Time:{%$book_list[book].add_date|date_format:'%Y-%m-%d'%} / IP:{%$book_list[book].add_ip%} / QQ:{%if $book_list[book].yc_qq eq 1%}
+***
+{%else%}
+<img src='{%$img%}30x30.png' title={%$book_list[book].qq%}>
+{%/if%}/  Email:{%if $book_list[book].yc_email eq 1%}
+***
+{%else%}
+<a href=mailto:{%$book_list[book].email%}><img src='{%$img%}email.png' title={%$book_list[book].email%}></a>
+{%/if%}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="STYLE2">[带&quot;<span class="STYLE3">*</span>&quot;号为隐藏内容]</span></div>
+      <div class="list_t">
+        <img src="{%$img%}ico_1.gif" alt="问题标题" /> {%$book_list[book].title%}
+      </div>
+      <div class="list_dc">
+         {%$book_list[book].content%}
+      </div>
+
+	  <div class="list_d">
+        <img src="{%$img%}ico_2.gif" alt="回答" /> <span>回复：</span> {%if $book_list[book].reply eq NULL%}
+此留言暂未回复
+{%else%}
+{%$book_list[book].reply%}
+{%/if%}
+      </div>
+      <div class="list_time">
+        Response Time:2014-8-1 15:53:08
+
+      </div>
+
+    </div>
+    <div class="line"></div>
+	 {%/section%}
+{%/if%}
+	<table width=100% border=0 cellpadding=0 cellspacing=0 ><TR >
+<TD align=right  class=hui>
+<p align='center'>
+{%$pageBar%}</TD>
+</TR>
+</table>
+
+  </div>
+ {%include file="layout/foot.html"%}
+

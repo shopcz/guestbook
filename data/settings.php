@@ -1,0 +1,1 @@
+a:7:{s:6:"wzname";s:24:"霏凡留言板系统1.0";s:3:"url";s:16:"http://127.0.0.1";s:12:"descriptions";s:18:"留言板系统1.0";s:8:"keywords";s:18:"留言板系统1.0";s:8:"gbook_sh";s:1:"0";s:5:"theme";s:7:"default";s:6:"button";s:18:"保存系统设置";}
